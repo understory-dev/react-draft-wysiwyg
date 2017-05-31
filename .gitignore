@@ -1,4 +1,13 @@
-.DS_Store
-npm-debug.log
-sandbox
-*.tgz
+config
+css
+docs
+js
+images
+interfaces
+.babelrc
+.eslintconfig
+.eslintrc
+.flowconfig
+.npmignore
+yarn.lock
+
