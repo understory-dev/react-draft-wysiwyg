@@ -4,6 +4,7 @@ docs
 js
 images
 interfaces
+node_modules
 .babelrc
 .eslintconfig
 .eslintrc
