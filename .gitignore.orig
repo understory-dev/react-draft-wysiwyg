@@ -1,0 +1,23 @@
+<<<<<<< HEAD
+config
+css
+docs
+js
+images
+interfaces
+node_modules
+.babelrc
+.eslintconfig
+.eslintrc
+.flowconfig
+.npmignore
+yarn.lock
+
+=======
+.DS_Store
+npm-debug.log
+sandbox
+*.tgz
+node_modules/
+.vscode
+>>>>>>> master
