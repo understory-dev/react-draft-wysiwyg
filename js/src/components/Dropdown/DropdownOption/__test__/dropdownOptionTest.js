@@ -25,4 +25,14 @@ describe('DropdownOption test suite', () => {
     option.childAt(0).simulate('click');
     expect(onSelect.called).to.equal(true);
   });
+
+  it('should add custom class to li for value', () => {
+    const dropDown = shallow(
+      <DropdownOption value="H1">
+        <div>Heading 1</div>
+      </DropdownOption>
+    );
+
+    expect(dropDown.find('li.rdw-dropdownoption-default-H1').exists()).to.equal(true);
+  })
 });
