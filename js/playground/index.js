@@ -123,7 +123,7 @@ class Playground extends Component {
               onFocus={() => {console.log('focus')}}
               onBlur={() => {console.log('blur')}}
               onTab={() => {console.log('tab'); return true;}}
-              localization={{ locale: 'en', translations: {'generic.add': 'Test-Add'} }}
+              localization={{ locale: 'zh', translations: {'generic.add': 'Test-Add'} }}
               mention={{
                 separator: ' ',
                 trigger: '@',
