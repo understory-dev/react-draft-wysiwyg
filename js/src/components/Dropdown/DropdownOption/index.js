@@ -56,11 +56,13 @@ export default class DropDownOption extends Component {
       activeClassName,
       disabledClassName,
       highlightedClassName,
+      value,
      } = this.props;
     return (
       <li
         className={classNames(
             'rdw-dropdownoption-default',
+            `rdw-dropdownoption-default-${value}`,
             className,
             { [`rdw-dropdownoption-active ${activeClassName}`]: active,
               [`rdw-dropdownoption-highlighted ${highlightedClassName}`]: highlighted,
