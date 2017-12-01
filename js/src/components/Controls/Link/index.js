@@ -11,6 +11,12 @@ import {
 
 import LayoutComponent from './Component';
 
+function ensureProtocol(url) {
+  const regex = /^http(s)?:\/\//;
+  const urlWithProtocol = regex.test(url) ? url : `http://${url}`;
+  return urlWithProtocol;
+}
+
 class Link extends Component {
 
   static propTypes = {
@@ -126,7 +132,10 @@ class Link extends Component {
     }
     const entityKey = editorState
       .getCurrentContent()
-      .createEntity('LINK', 'MUTABLE', { url: linkTarget, target: linkTargetOption })
+      .createEntity('LINK', 'MUTABLE', {
+        url: ensureProtocol(linkTarget),
+        target: linkTargetOption,
+      })
       .getLastCreatedEntityKey();
 
     let contentState = Modifier.replaceText(

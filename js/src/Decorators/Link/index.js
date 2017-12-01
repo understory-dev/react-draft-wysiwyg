@@ -16,14 +16,6 @@ function findLinkEntities(contentBlock, callback, contentState) {
   );
 }
 
-/* This function will validate the URL
- * Ensuring that it is properly prepended with a protocol
- * */
-function validateURL(url) {
-  const regex = /^http(s)?:\/\//;
-  const urlWithProtocol = regex.test(url) ? url : `http://${url}`;
-  return urlWithProtocol;
-}
 class Link extends Component {
 
   static propTypes = {
@@ -39,8 +31,7 @@ class Link extends Component {
   openLink: Function = () => {
     const { entityKey, contentState } = this.props;
     const { url } = contentState.getEntity(entityKey).getData();
-    const href = validateURL(url);
-    const linkTab = window.open(href, 'blank'); // eslint-disable-line no-undef
+    const linkTab = window.open(url, 'blank'); // eslint-disable-line no-undef
     linkTab.focus();
   };
 
@@ -54,7 +45,6 @@ class Link extends Component {
   render() {
     const { children, entityKey, contentState } = this.props;
     const { url, targetOption } = contentState.getEntity(entityKey).getData();
-    const href = validateURL(url);
     const { showPopOver } = this.state;
     return (
       <span
@@ -62,7 +52,7 @@ class Link extends Component {
         onMouseEnter={this.toggleShowPopOver}
         onMouseLeave={this.toggleShowPopOver}
       >
-        <a href={href} target={targetOption}>{children}</a>
+        <a href={url} target={targetOption}>{children}</a>
         {showPopOver ?
           <img
             src={openlink}
