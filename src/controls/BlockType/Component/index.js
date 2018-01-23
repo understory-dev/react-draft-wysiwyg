@@ -37,12 +37,12 @@ class LayoutComponent extends Component {
 
   getBlockTypes = translations => [
     { label: 'Normal', displayName: translations['components.controls.blocktype.normal'] },
-    { label: 'H1', displayName: translations['components.controls.blocktype.h1'] },
-    { label: 'H2', displayName: translations['components.controls.blocktype.h2'] },
-    { label: 'H3', displayName: translations['components.controls.blocktype.h3'] },
-    { label: 'H4', displayName: translations['components.controls.blocktype.h4'] },
-    { label: 'H5', displayName: translations['components.controls.blocktype.h5'] },
-    { label: 'H6', displayName: translations['components.controls.blocktype.h6'] },
+    { label: 'H1', className: 'heading-h1', displayName: translations['components.controls.blocktype.h1'] },
+    { label: 'H2', className: 'heading-h2', displayName: translations['components.controls.blocktype.h2'] },
+    { label: 'H3', className: 'heading-h3', displayName: translations['components.controls.blocktype.h3'] },
+    { label: 'H4', className: 'heading-h4', displayName: translations['components.controls.blocktype.h4'] },
+    { label: 'H5', className: 'heading-h5', displayName: translations['components.controls.blocktype.h5'] },
+    { label: 'H6', className: 'heading-h6', displayName: translations['components.controls.blocktype.h6'] },
     { label: 'Blockquote', displayName: translations['components.controls.blocktype.blockquote'] },
     { label: 'Code', displayName: translations['components.controls.blocktype.code'] },
   ];
@@ -100,6 +100,7 @@ class LayoutComponent extends Component {
                 active={blockType === block.label}
                 value={block.label}
                 key={index}
+                className={block.className}
               >
                 {block.displayName}
               </DropdownOption>))
